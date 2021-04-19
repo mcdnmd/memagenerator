@@ -1,13 +1,25 @@
+body {
+    background: whitesmoke;
+}
+
 .site_header {
     text-align: center;
+    height: 50px;
+    font-family: sans-serif;
 }
 
 .content_block {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .content {
-    height: 256px;
-    width: 256px;
+    margin: 10px 10px;
+}
+
+.content > img {
+
+    height: 300px;
+    width: 300px;
 }
