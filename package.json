@@ -1,0 +1,23 @@
+{
+  "name": "memagen",
+  "version": "1.0.0",
+  "description": "We will do some dirty shit!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcdnmd/memagenerator.git"
+  },
+  "author": "mcdnmd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcdnmd/memagenerator/issues"
+  },
+  "homepage": "https://github.com/mcdnmd/memagenerator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,13 @@
+.site_header {
+    text-align: center;
+}
+
+.content_block {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    height: 256px;
+    width: 256px;
+}
