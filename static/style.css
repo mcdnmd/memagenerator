@@ -10,16 +10,15 @@ body {
 
 .content_block {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .content {
-    margin: 10px 10px;
+    margin: 30px 20px;
 }
 
 .content > img {
-
     height: 300px;
     width: 300px;
 }

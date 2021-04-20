@@ -1,7 +1,13 @@
-const express = require('express');
+import express from 'express'
+import path from 'path'
+
+const __dirname = path.resolve();
+const PORT = 3333;
 const app = express();
 
-require('./components/mainpage/index')(app);
-app.listen(3333, () => {
-    console.log('server started!');
+app.use(express.static(path.resolve(__dirname, 'static')));
+
+
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}!`);
 });
