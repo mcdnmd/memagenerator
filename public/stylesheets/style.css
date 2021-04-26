@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: whitesmoke;
 }
@@ -14,17 +13,12 @@ a {
   font-family: sans-serif;
 }
 
-.content_block {
+.page {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.content {
-  margin: 30px 20px;
-}
+.media_uploader {
 
-.content > img {
-  height: 300px;
-  width: 300px;
 }
