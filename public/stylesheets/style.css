@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: whitesmoke;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.site_header {
+  text-align: center;
+  height: 50px;
+  font-family: sans-serif;
+}
+
+.content_block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content {
+  margin: 30px 20px;
+}
+
+.content > img {
+  height: 300px;
+  width: 300px;
+}

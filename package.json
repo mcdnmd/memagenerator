@@ -1,27 +1,18 @@
 {
-  "name": "memagen",
-  "version": "1.0.0",
-  "description": "We will do some dirty shit!",
-  "main": "index.js",
-  "type": "module",
+  "name": "memagenerator",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
-    "serve": "nodemon index.js"
+    "start": "node ./bin/www",
+    "serve": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mcdnmd/memagenerator.git"
-  },
-  "author": "mcdnmd",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mcdnmd/memagenerator/issues"
-  },
-  "homepage": "https://github.com/mcdnmd/memagenerator#readme",
   "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
     "nodemon": "^2.0.7"
   }
 }
