@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
   <%- include('./partials/head'); %>
+
+  <script>
+    function test() {
+      let file = document.getElementById('file').files[0];
+      let reader  = new FileReader();
+      reader.onload = function(e)  {
+        let image = document.createElement("img");
+        image.src = e.target.result;
+        image.id = 'media-source'
+        let media = document.getElementById('media');
+        document.getElementById('media-source').remove();
+        media.appendChild(image);
+        //document.body.appendChild(image);
+      }
+      reader.readAsDataURL(file);
+    }
+  </script>
+
   <body>
     <div class="site_header">
       <h1>MemaGen.com</h1>
     </div>
     <div class="page">
+      <div class="media_content" id="media">
+        <img  id="media-source" src="/images/prototype.png">
+      </div>
       <div class="options">
-        <div class="media_uploader">
-          <input type="file" placeholder="Upload your sample">
+        <div class="media_uploader option">
+          <input id="file" type="file" placeholder="Upload your sample">
+        </div>
+        <div class="upper-text option">
+          <input type="text" placeholder="Upper text">
+        </div>
+        <div class="lower-text option">
+          <input type="text" placeholder="Lower text">
+        </div>
+        <div class="submit option">
+          <input type="submit", onclick="test()">
         </div>
       </div>
     </div>
 
-
   </body>
+
 </html>

@@ -14,11 +14,48 @@ a {
 }
 
 .page {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: row;
+  width: auto;
+  height: 85vh;
 }
 
-.media_uploader {
+.media_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 4;
+  background: aqua;
+  margin: 15px;
+}
 
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: red;
+  flex-grow: 10;
+  margin: 15px;
+}
+
+img {
+  max-width: 64vw;
+  max-height: 36vw;
+  width: auto;
+  height: auto;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: saddlebrown;
+  width: 20vw;
+  height: 5vw;
 }
