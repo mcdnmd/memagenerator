@@ -17,7 +17,7 @@
         </div>
 
         <div class="upper-text option">
-          <input type="text" placeholder="Upper text">
+          <input id="upper-text" type="text" placeholder="Upper text">
         </div>
 
         <div class="lower-text option">
@@ -54,6 +54,16 @@
         ctx.drawImage(image, 0, 0);
       };
     }, false);
+
+    let upperText = document.getElementById('upper-text');
+    upperText.addEventListener('change', (e) => {
+      let canvas = document.getElementById('media-source');
+      let ctx = canvas.getContext('2d');
+      console.log(upperText.value);
+      ctx.font = "72px Impact";
+      ctx.fillText(upperText.value, 100, 100);
+    }, false);
+
   </script>
 
 </html>
