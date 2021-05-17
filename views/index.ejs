@@ -34,20 +34,25 @@
 
   <script>
     let file = document.getElementById('file');
-    file.addEventListener("change", function (e) {
+    file.addEventListener("change", (e) => {
       let canvas = document.getElementById('media-source');
       let ctx = canvas.getContext('2d');
       let reader  = new FileReader();
       let image = new Image();
-      reader.addEventListener('load', async function (e) {
-        image.src = await reader.result;
+
+      reader.addEventListener('load',  (e) => {
+        image.src = reader.result;
+      }, false);
+
+      reader.readAsDataURL(file.files[0]);
+
+      image.onload = () =>{
         canvas.setAttribute('width', image.width);
         canvas.setAttribute('height', image.height);
         console.log(image.width, image.height)
         console.log(image);
         ctx.drawImage(image, 0, 0);
-      }, false);
-      reader.readAsDataURL(file.files[0]);
+      };
     }, false);
   </script>
 
