@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html>
   <%- include('./partials/head'); %>
-
-  <script>
-    function test() {
-      let file = document.getElementById('file').files[0];
-      let reader  = new FileReader();
-      reader.onload = function(e)  {
-        let image = document.createElement("img");
-        image.src = e.target.result;
-        image.id = 'media-source'
-        let media = document.getElementById('media');
-        document.getElementById('media-source').remove();
-        media.appendChild(image);
-        //document.body.appendChild(image);
-      }
-      reader.readAsDataURL(file);
-    }
-  </script>
-
   <body>
     <div class="site_header">
       <h1>MemaGen.com</h1>
     </div>
     <div class="page">
+
       <div class="media_content" id="media">
-        <img  id="media-source" src="/images/prototype.png">
+        <canvas id="media-source"></canvas>
       </div>
+
       <div class="options">
         <div class="media_uploader option">
-          <input id="file" type="file" placeholder="Upload your sample">
+          <input id="file" type="file" accept="image/*">
         </div>
+
         <div class="upper-text option">
           <input type="text" placeholder="Upper text">
         </div>
+
         <div class="lower-text option">
           <input type="text" placeholder="Lower text">
         </div>
+
         <div class="submit option">
-          <input type="submit", onclick="test()">
+          <input type="submit">
         </div>
       </div>
     </div>
 
   </body>
+
+  <script>
+    let file = document.getElementById('file');
+    file.addEventListener("change", function (e) {
+      let canvas = document.getElementById('media-source');
+      let ctx = canvas.getContext('2d');
+      let reader  = new FileReader();
+      let image = new Image();
+      reader.addEventListener('load', async function (e) {
+        image.src = await reader.result;
+        canvas.setAttribute('width', image.width);
+        canvas.setAttribute('height', image.height);
+        console.log(image.width, image.height)
+        console.log(image);
+        ctx.drawImage(image, 0, 0);
+      }, false);
+      reader.readAsDataURL(file.files[0]);
+    }, false);
+  </script>
 
 </html>

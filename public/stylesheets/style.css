@@ -41,11 +41,10 @@ a {
   margin: 15px;
 }
 
-img {
+canvas {
   max-width: 64vw;
   max-height: 36vw;
-  width: auto;
-  height: auto;
+  background: blue;
 }
 
 .option {
@@ -58,4 +57,5 @@ img {
   background: saddlebrown;
   width: 20vw;
   height: 5vw;
+  min-width: 10vw;
 }
