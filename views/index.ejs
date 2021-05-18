@@ -59,9 +59,8 @@
     upperText.addEventListener('change', (e) => {
       let canvas = document.getElementById('media-source');
       let ctx = canvas.getContext('2d');
-      console.log(upperText.value);
       ctx.font = "72px Impact";
-      ctx.fillText(upperText.value, 100, 100);
+      ctx.fillText(upperText.value, canvas.clientWidth / 2, 150);
     }, false);
 
   </script>
