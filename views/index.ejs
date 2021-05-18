@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <%- include('./partials/head'); %>
+
   <body>
     <div class="site_header">
       <h1>MemaGen.com</h1>
@@ -21,7 +22,7 @@
         </div>
 
         <div class="lower-text option">
-          <input type="text" placeholder="Lower text">
+          <input id="lower-text" type="text" placeholder="Lower text">
         </div>
 
         <div class="submit option">
@@ -29,40 +30,7 @@
         </div>
       </div>
     </div>
-
+    <script src="/javascripts/index.js"></script>
   </body>
-
-  <script>
-    let file = document.getElementById('file');
-    file.addEventListener("change", (e) => {
-      let canvas = document.getElementById('media-source');
-      let ctx = canvas.getContext('2d');
-      let reader  = new FileReader();
-      let image = new Image();
-
-      reader.addEventListener('load',  (e) => {
-        image.src = reader.result;
-      }, false);
-
-      reader.readAsDataURL(file.files[0]);
-
-      image.onload = () =>{
-        canvas.setAttribute('width', image.width);
-        canvas.setAttribute('height', image.height);
-        console.log(image.width, image.height)
-        console.log(image);
-        ctx.drawImage(image, 0, 0);
-      };
-    }, false);
-
-    let upperText = document.getElementById('upper-text');
-    upperText.addEventListener('change', (e) => {
-      let canvas = document.getElementById('media-source');
-      let ctx = canvas.getContext('2d');
-      ctx.font = "72px Impact";
-      ctx.fillText(upperText.value, canvas.clientWidth / 2, 150);
-    }, false);
-
-  </script>
 
 </html>
