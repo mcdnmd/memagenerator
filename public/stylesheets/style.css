@@ -59,3 +59,10 @@ canvas {
   height: 5vw;
   min-width: 10vw;
 }
+
+input[type=text] {
+  background-color: #bcbcbc;
+  color: white;
+  width: 15vw;
+  height: 2vw;
+}

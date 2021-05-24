@@ -1,6 +1,6 @@
 let file = document.getElementById('file');
 
-let image = new Image();
+let image = null;
 var textSizeTop = 10;
 var textSizeBottom = 10;
 
@@ -8,6 +8,7 @@ file.addEventListener("change", (e) => {
     let canvas = document.getElementById('media-source');
     let ctx = canvas.getContext('2d');
     let reader  = new FileReader();
+    image = new Image();
 
     reader.addEventListener('load',  (e) => {
         image.src = reader.result;
@@ -21,6 +22,7 @@ file.addEventListener("change", (e) => {
         console.log(image.width, image.height)
         console.log(image);
         ctx.drawImage(image, 0, 0);
+        draw()
     };
 }, false);
 
@@ -41,15 +43,28 @@ lowerText.addEventListener('input', (e) => {
     draw();
 }, false);
 
+
+let textSize = document.getElementById('text-size');
+let sizeText = 55;
+
+textSize.addEventListener('change', (e) =>{
+    sizeText = textSize.value;
+    console.log(textSize.value)
+    draw();
+}, false);
+
 function draw(){
-    let canvas = document.getElementById('media-source');
-    let ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(image, 0, 0);
-    ctx.font = "100px Impact";
-    ctx.textAlign = "center"
-    ctx.strokeStyle = '#000';
-    ctx.fillStyle = "white";
-    ctx.fillText(textUp, canvas.width / 2, textSizeTop/100*canvas.width + 15);
-    ctx.fillText(textLow, canvas.width / 2, canvas.height - 15);
+    if (image !== null) {
+        let canvas = document.getElementById('media-source');
+        let ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 0, 0);
+        ctx.font = `${sizeText}px Impact`;
+        console.log(ctx);
+        ctx.textAlign = "center"
+        ctx.strokeStyle = '#000';
+        ctx.fillStyle = "white";
+        ctx.fillText(textUp, canvas.width / 2, textSizeTop / 100 * canvas.width + 15);
+        ctx.fillText(textLow, canvas.width / 2, canvas.height - 15);
+    }
 }
