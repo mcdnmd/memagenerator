@@ -16,6 +16,7 @@ a {
 .page {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   width: auto;
   height: 85vh;
@@ -39,6 +40,8 @@ a {
   background: red;
   flex-grow: 10;
   margin: 15px;
+  min-width: 40vw;
+
 }
 
 canvas {

@@ -60,9 +60,11 @@ function draw(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(image, 0, 0);
         ctx.font = `${sizeText}px Impact`;
-        console.log(ctx);
+        ctx.lineWidth = 8;
         ctx.textAlign = "center"
-        ctx.strokeStyle = '#000';
+        ctx.strokeStyle = 'black';
+        ctx.strokeText(textUp, canvas.width / 2, textSizeTop / 100 * canvas.width + 15);
+        ctx.strokeText(textLow, canvas.width / 2, canvas.height - 15);
         ctx.fillStyle = "white";
         ctx.fillText(textUp, canvas.width / 2, textSizeTop / 100 * canvas.width + 15);
         ctx.fillText(textLow, canvas.width / 2, canvas.height - 15);
