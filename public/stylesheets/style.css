@@ -9,7 +9,7 @@ a {
 
 .site_header {
   text-align: center;
-  height: 50px;
+  height: 5vh;
   font-family: sans-serif;
 }
 
@@ -41,12 +41,12 @@ a {
   flex-grow: 10;
   margin: 15px;
   min-width: 40vw;
-
 }
 
 canvas {
-  max-width: 64vw;
-  max-height: 36vw;
+  display: flex;
+  max-width: 50vw;
+  max-height: 50vh;
   background: blue;
 }
 
@@ -54,18 +54,17 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 15px;
   margin-bottom: 15px;
   background: saddlebrown;
-  width: 20vw;
-  height: 5vw;
+  width: 30vw;
+  height: 8vh;
   min-width: 10vw;
 }
 
 input[type=text] {
-  background-color: #bcbcbc;
+  background-color: #a7a7a7;
   color: white;
-  width: 15vw;
-  height: 2vw;
+  width: 100%;
+  height: 5vw;
 }
