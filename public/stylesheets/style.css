@@ -59,8 +59,8 @@ canvas {
   align-items: center;
   min-width: 10vw;
   min-height: 8vh;
-  margin-top: 0.5vh;
-  margin-bottom: 0.5vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   margin-right: 0.5vh;
   color: white;
 }
@@ -143,6 +143,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: hidden;
   width: 20vw;
   height: 10vh;
   min-width: 20vw;
