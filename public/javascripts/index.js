@@ -18,16 +18,23 @@ let upperTextInput = document.getElementById('upper-text');
 let lowerTextInput = document.getElementById('lower-text');
 let textSizeDrug = document.getElementById('text-size');
 let textColorInput = document.getElementById('text-color');
+let textStrokeCheck = document.getElementById('text-stroke');
 let downloadButton = document.getElementById('download-button');
+
 
 function clearAll(){
     sizeText = 15;
     textUp = '';
     textLow = ''
     textColor = 'white';
-    document.getElementById('text-size').value = 15;
-    document.getElementById('lower-text').value = '';
-    document.getElementById('upper-text').value = '';
+    strokeStyle = true;
+    upperTextInput.value = '';
+    lowerTextInput.value = '';
+    textSizeDrug.value = 15;
+    textColorInput.value = '#ffffff';
+    console.log(textStrokeCheck.value)
+
+    textStrokeCheck.value = true;
 }
 
 file.addEventListener("change", (e) => {
@@ -67,11 +74,15 @@ textColorInput.addEventListener('change', (e) => {
     draw();
 }, false);
 
+textStrokeCheck.addEventListener('input', (e) => {
+    strokeStyle = textStrokeCheck.checked;
+    draw();
+}, false);
+
 window.addEventListener('resize', (e) => {
     sizeText = textSizeDrug.value / 100 * canvas.width;
     draw();
 }, false);
-
 
 downloadButton.addEventListener('click', (e) => {
     let link = document.createElement('a');
@@ -87,13 +98,10 @@ downloadButton.addEventListener('click', (e) => {
 
 function getSizes() {
     let bodyWith = document.body.clientWidth;
-    let bodyHeight = document.body.clientHeight;
     let width = image.naturalWidth;
     let aspect = width / image.naturalHeight;
-    if (width > bodyWith * 0.8){
+    if (width > bodyWith * 0.8)
         width = bodyWith * 0.8;
-    }
-    console.log(width, width / aspect);
     return [width, width / aspect];
 }
 

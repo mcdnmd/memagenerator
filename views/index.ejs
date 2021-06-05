@@ -12,26 +12,37 @@
           <canvas id="media-source"></canvas>
         </div>
 
+
         <div class="options">
-          <div class="media_uploader option">
-            <input id="file" type="file" accept="image/*">
+          <div class="media-uploader option">
+            <input id="file" type="file" class="file-input" accept="image/*">
+            <label for="file">
+              <img src="/images/upload.svg" class="upload-image">
+              Choose an image
+            </label>
           </div>
-
-          <div class="upper-text option">
-            <input id="upper-text" type="text" placeholder="Upper text">
-          </div>
-
-          <div class="lower-text option">
-            <input id="lower-text" type="text" placeholder="Lower text">
-          </div>
-
-          <div class="text-options">
-            <div class="text-size option">
-              <input id="text-size" type="range" min="10" max="20" step="1" placeholder="15">
+          <div class="text-options-extended">
+            <div class="upper-text text-value option">
+              <input id="upper-text" type="text" placeholder="Upper text">
             </div>
 
-            <div class="text-color option">
-              <input id="text-color" type="color">
+            <div class="lower-text text-value option">
+              <input id="lower-text" type="text" placeholder="Lower text">
+            </div>
+
+            <div class="text-options">
+              <div class="text-size option">
+                <input id="text-size" type="range" min="10" max="20" step="1" placeholder="15">
+              </div>
+
+              <div class="text-color option">
+                <input id="text-color" type="color" value="#ffffff">
+              </div>
+
+              <div class="text-stroke option">
+                <input id="text-stroke" type="checkbox" value="on">
+                <label for="text-stroke">Stroke text</label>
+              </div>
             </div>
           </div>
 
