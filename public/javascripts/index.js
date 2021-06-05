@@ -7,6 +7,7 @@ let sizeText = 15;
 let textColor = 'white';
 let textLow = '';
 let textUp = '';
+let strokeStyle = true;
 
 let canvas = document.getElementById('media-source');
 canvas.width = 600
@@ -75,7 +76,11 @@ window.addEventListener('resize', (e) => {
 downloadButton.addEventListener('click', (e) => {
     let link = document.createElement('a');
     link.download = '5051memorial.png';
-    let can = document.getElementById("media-source");
+    let can = document.createElement('canvas');
+    let fakeCtx = can.getContext('2d');
+    can.width = image.naturalWidth;
+    can.height = image.naturalHeight;
+    draw(true, can);
     link.href = can.toDataURL("image/png")
     link.click();
 }, false);
@@ -92,35 +97,29 @@ function getSizes() {
     return [width, width / aspect];
 }
 
-function draw(){
-    if (image.src !== '') {
+function draw(fake=false, can=canvas){
+    if (image.src === '')
+        return;
+    let textSize = sizeText;
+    let context = can.getContext('2d');
+    if (!fake){
         let canvasSizes = getSizes();
-        //console.log(canvasSizes, image.width, image.width * canvasSizes[0], image.height, image.height * canvasSizes[1]);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-       //canvas.setAttribute('width', image.width * canvasSizes[0]);
-        //canvas.setAttribute('height', image.height * canvasSizes[1]);
-        let aspect = image.naturalWidth / image.naturalHeight;
-        canvas.setAttribute('width', canvasSizes[0]);
-        canvas.setAttribute('height', canvasSizes[1]);
-
-        let xc = image.width / 2;
-        let yc = image.height / 2;
-        let xStart = xc - canvas.width / 2;
-        let yStart = yc - canvas.width / 2;
-        let xEnd = xc + canvas.width / 2;
-        let yEnd = yc + canvas.width / 2;
-        //ctx.drawImage(image, xStart, yStart, xEnd, yEnd, 0, 0, canvas.width, canvas.height);
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-        ctx.lineWidth = canvas.width*0.004
-        ctx.font = `${sizeText}px Impact`;
-        ctx.lineWidth = 8;
-        ctx.textAlign = "center"
-        ctx.strokeStyle = 'black';
-        ctx.fillStyle = textColor;
-        ctx.strokeText(textUp, canvas.width / 2, textSizeTop / 100 * canvas.width + 15);
-        ctx.strokeText(textLow, canvas.width / 2, canvas.height - textSizeBottom - 15);
-        ctx.fillText(textUp, canvas.width / 2, textSizeTop / 100 * canvas.width + 15);
-        ctx.fillText(textLow, canvas.width / 2, canvas.height - textSizeBottom - 15);
+        context.clearRect(0, 0, can.width, can.height);
+        can.setAttribute('width', canvasSizes[0]);
+        can.setAttribute('height', canvasSizes[1]);
+    } else {
+        textSize = textSizeDrug.value / 100 * can.width;
     }
+    context.drawImage(image, 0, 0, can.width, can.height);
+    context.font = `${textSize}px Impact`;
+    context.lineWidth = 8;
+    context.textAlign = "center"
+    context.fillStyle = textColor;
+    if (strokeStyle){
+        context.strokeStyle = 'black';
+        context.strokeText(textUp, can.width / 2, textSizeTop / 100 * can.width + 15);
+        context.strokeText(textLow, can.width / 2, can.height - textSizeBottom - 15);
+    }
+    context.fillText(textUp, can.width / 2, textSizeTop / 100 * can.width + 15);
+    context.fillText(textLow, can.width / 2, can.height - textSizeBottom - 15);
 }
