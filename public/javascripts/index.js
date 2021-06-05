@@ -32,9 +32,7 @@ function clearAll(){
     lowerTextInput.value = '';
     textSizeDrug.value = 15;
     textColorInput.value = '#ffffff';
-    console.log(textStrokeCheck.value)
-
-    textStrokeCheck.value = true;
+    textStrokeCheck.checked = true;
 }
 
 file.addEventListener("change", (e) => {
@@ -48,8 +46,8 @@ file.addEventListener("change", (e) => {
     reader.readAsDataURL(file.files[0]);
 
     image.onload = () =>{
-        //ctx.drawImage(image, 0, 0);
-        sizeText = sizeText/100 * canvas.width;
+        let size = getSizes();
+        sizeText = sizeText/100 * size[0];
         draw()
     };
 }, false);

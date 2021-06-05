@@ -1,5 +1,6 @@
 body {
-  font: 20px sans-serif;
+  font-size: 1.5em;
+  font-family: sans-serif;
   background: white;
   margin: 0;
 }
@@ -7,17 +8,18 @@ body {
 a {
   color: #00B7FF;
 }
+
 .site_header {
   display: flex;
   width: 100vw;
-  height: 10vh;
+  height: 15vh;
   background: #ffffff;
 }
 
 .header-logo {
-  height: 10vh;
+  height: 13vh;
+  margin: 10px;
 }
-
 
 .site_header label {
   margin: auto auto;
@@ -28,7 +30,6 @@ a {
   flex-wrap: wrap;
   flex-direction: row;
   height: 85vh;
-  background: #ffffff;
 }
 
 .page {
@@ -93,7 +94,6 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
   color: #ffffff;
   background: #28292b;
   min-width: 40vw;
@@ -162,7 +162,6 @@ canvas {
   align-items: center;
   width: 20vw;
   height: 10vh;
-  font-weight: 700;
   color: #ffffff;
   background: #28292b;
   min-width: 20vw;
