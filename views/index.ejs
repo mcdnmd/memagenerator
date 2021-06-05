@@ -7,50 +7,48 @@
       <label><img class='header-logo' src="/images/logo.svg"></label>
     </div>
     <div class="page">
-      <div class="holder">
-        <div class="media_content" id="media">
-          <canvas id="media-source"></canvas>
+      <div class="media_content" id="media">
+        <canvas id="media-source"></canvas>
+      </div>
+
+
+      <div class="options">
+        <div class="media-uploader option">
+          <input id="file" type="file" class="file-input" accept="image/*">
+          <label for="file">
+            <img src="/images/upload.svg" class="upload-image">
+            Choose an image
+          </label>
+        </div>
+        <div class="text-options-extended">
+          <div class="upper-text text-value option">
+            <input id="upper-text" type="text" placeholder="Upper text">
+          </div>
+
+          <div class="lower-text text-value option">
+            <input id="lower-text" type="text" placeholder="Lower text">
+          </div>
+
+          <div class="text-options">
+            <div class="text-size option">
+              <input id="text-size" type="range" min="10" max="20" step="1" placeholder="15">
+            </div>
+
+            <div class="text-color option">
+              <input id="text-color" type="color" value="#ffffff">
+            </div>
+
+            <div class="text-stroke option">
+              <input id="text-stroke" type="checkbox" checked>
+              <label for="text-stroke">Stroke text</label>
+            </div>
+          </div>
         </div>
 
-
-        <div class="options">
-          <div class="media-uploader option">
-            <input id="file" type="file" class="file-input" accept="image/*">
-            <label for="file">
-              <img src="/images/upload.svg" class="upload-image">
-              Choose an image
-            </label>
-          </div>
-          <div class="text-options-extended">
-            <div class="upper-text text-value option">
-              <input id="upper-text" type="text" placeholder="Upper text">
-            </div>
-
-            <div class="lower-text text-value option">
-              <input id="lower-text" type="text" placeholder="Lower text">
-            </div>
-
-            <div class="text-options">
-              <div class="text-size option">
-                <input id="text-size" type="range" min="10" max="20" step="1" placeholder="15">
-              </div>
-
-              <div class="text-color option">
-                <input id="text-color" type="color" value="#ffffff">
-              </div>
-
-              <div class="text-stroke option">
-                <input id="text-stroke" type="checkbox" checked>
-                <label for="text-stroke">Stroke text</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="download-button option">
-            <button id="download-button">Download</button>
-          </div>
-
+        <div class="download-button option">
+          <button id="download-button">Download</button>
         </div>
+
       </div>
     </div>
     <script src="/javascripts/index.js"></script>

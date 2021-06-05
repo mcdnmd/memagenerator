@@ -5,39 +5,26 @@ body {
   margin: 0;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .site_header {
   display: flex;
   width: 100vw;
   height: 15vh;
-  background: #ffffff;
 }
 
 .header-logo {
   height: 13vh;
-  margin: 10px;
+  margin-top: 2vh;
 }
 
 .site_header label {
   margin: auto auto;
 }
 
-.holder {
+.page {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   height: 85vh;
-}
-
-.page {
-  position: relative;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: auto;
-
 }
 
 .media_content {
@@ -45,9 +32,9 @@ a {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  margin: 1vh 1vw;
+  border-radius: 2vh;
   background: #bcbcbc;
-  margin: 15px;
-  border-radius: 25px;
 }
 
 canvas {
@@ -61,9 +48,9 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: 70vh;
   flex-grow: 1;
-  margin: 15px;
-  border-radius: 25px;
+  margin: 1vh 1vw;
 }
 
 .option {
@@ -72,13 +59,15 @@ canvas {
   align-items: center;
   min-width: 10vw;
   min-height: 8vh;
-  margin: 1vh 1.5vw;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  margin-right: 0.5vh;
   color: white;
 }
 
 .file-input {
-  width: 0.1px;
-  height: 0.1px;
+  width: 1px;
+  height: 1px;
   opacity: 0;
   overflow: hidden;
   z-index: -1;
@@ -87,23 +76,19 @@ canvas {
 .upload-image{
   width: 1.1em;
   height: 1.1em;
-  margin: 1vw 1vh;
+  margin-right: 1vw;
+  margin-bottom: 1vh;
 }
 
 .file-input + label {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  background: #28292b;
   min-width: 40vw;
   min-height: 10vh;
-  margin: 15px;
-  border-radius: 25px;
-}
-
-.file-input + label {
-  cursor: pointer;
+  border-radius: 2vh;
+  color: #ffffff;
+  background: #28292b;
 }
 
 .text-options-extended {
@@ -112,27 +97,24 @@ canvas {
   justify-content: center;
   align-items: flex-start;
   flex-grow: 1;
-  margin: 15px;
-  border-radius: 25px;
+  border-radius: 2vh;
   background: #28292b;
 }
 
-.text-value {
+.text-value input {
+  position: relative;
   width: 30vw;
   height: 10vh;
   min-width: 10vw;
   min-height: 8vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.text-value input {
-  width: 30vw;
   border: none;
-  outline: none;
   border-bottom: 1px solid #999;
+  margin: 1vh 2vw;
+  overflow: hidden;
   background: #28292b;
   color: white;
+  outline: none;
+  font-size: 1.5em;
 }
 
 
@@ -144,17 +126,18 @@ canvas {
 
 .text-size {
   flex-grow: 2;
+  margin: 1vh 1vw;
 }
 
 .text-color {
   flex-grow: 1;
+  margin: 1vh 1vw;
 }
 
 .text-stroke {
   flex-grow: 2;
+  margin: 1vh 1vw;
 }
-
-
 
 .download-button button{
   display: flex;
@@ -162,10 +145,10 @@ canvas {
   align-items: center;
   width: 20vw;
   height: 10vh;
-  color: #ffffff;
-  background: #28292b;
   min-width: 20vw;
   min-height: 10vh;
-  margin: 15px;
-  border-radius: 25px;
+  color: #ffffff;
+  background: #28292b;
+  border-radius: 2vh;
+  font-size: 1em;
 }
