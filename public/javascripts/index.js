@@ -20,10 +20,12 @@ let textSizeDrug = document.getElementById('text-size');
 let textColorInput = document.getElementById('text-color');
 let textStrokeCheck = document.getElementById('text-stroke');
 let downloadButton = document.getElementById('download-button');
-
+let resetButton = document.getElementById('reset-button');
 
 function clearAll(){
     sizeText = 15;
+    if (image.src !== '')
+        sizeText = 15 / 100 * canvas.width
     textUp = '';
     textLow = ''
     textColor = 'white';
@@ -38,13 +40,10 @@ function clearAll(){
 file.addEventListener("change", (e) => {
     let reader  = new FileReader();
     clearAll();
-
     reader.addEventListener('load',  (e) => {
         image.src = reader.result;
     }, false);
-
     reader.readAsDataURL(file.files[0]);
-
     image.onload = () =>{
         let size = getSizes();
         sizeText = sizeText/100 * size[0];
@@ -64,6 +63,7 @@ lowerTextInput.addEventListener('input', (e) => {
 
 textSizeDrug.addEventListener('change', (e) => {
     sizeText = textSizeDrug.value / 100 * canvas.width;
+    document.getElementById('value-text-size').innerText = textSizeDrug.value;
     draw();
 }, false);
 
@@ -94,12 +94,17 @@ downloadButton.addEventListener('click', (e) => {
     link.click();
 }, false);
 
+resetButton.addEventListener('click', (e) => {
+    clearAll();
+    draw();
+}, false);
+
 function getSizes() {
     let bodyWith = document.body.clientWidth;
     let width = image.naturalWidth;
     let aspect = width / image.naturalHeight;
-    if (width > bodyWith * 0.8)
-        width = bodyWith * 0.8;
+    if (width > bodyWith * 0.6)
+        width = bodyWith * 0.6;
     return [width, width / aspect];
 }
 
