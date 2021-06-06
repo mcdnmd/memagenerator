@@ -85,7 +85,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 40vw;
+  min-width: 20vw;
   min-height: 10vh;
   border-radius: 2vh;
   color: #ffffff;
@@ -151,12 +151,156 @@ button{
   justify-content: center;
   align-items: center;
   border: hidden;
-  width: 20vw;
+  width: 10vw;
   height: 10vh;
-  min-width: 20vw;
+  min-width: 10vw;
   min-height: 10vh;
   color: #ffffff;
   background: #28292b;
   border-radius: 2vh;
   font-size: 1em;
+}
+
+
+@media screen and (max-width: 500px) {
+  html {
+    -webkit-text-size-adjust: none;
+    margin: 0;
+    width: auto;
+  }
+
+  .page {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .site_header {
+    display: flex;
+    width: 100vw;
+    height: 15vh;
+  }
+
+  .header-logo {
+    height: 13vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+
+  .site_header label {
+    margin: auto auto;
+  }
+
+  .media_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 95vw;
+    max-height: 85vh;
+    margin: 1vh 5vw;
+    border-radius: 2vh;
+    background: #bcbcbc;
+  }
+
+  canvas {
+    display: flex;
+    max-width: 90vw;
+    max-height: 85vh;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 80vh;
+    margin: 2vh 5vw;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    min-width: 10vw;
+    min-height: 8vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-right: 0.5vh;
+    color: white;
+  }
+
+  .file-input {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .upload-image{
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 1vw;
+    margin-bottom: 1vh;
+  }
+
+  .file-input + label {
+    display: flex;
+    min-width: 90vw;
+    min-height: 10vh;
+  }
+
+  .text-value input {
+    width: 85vw;
+    height: 5vh;
+    border: none;
+    border-bottom: 1px solid #999;
+    margin: 1vh 2vw;
+    overflow: hidden;
+    outline: none;
+    font-size: 1em;
+  }
+
+  .text-options-extended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .text-options {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .text-size {
+    flex-grow: 2;
+    margin: 1vh 1vw;
+  }
+
+  .text-color {
+    flex-grow: 1;
+    margin: 1vh 1vw;
+  }
+
+  .text-stroke {
+    flex-grow: 2;
+    margin: 1vh 1vw;
+  }
+
+
+  .additional-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: hidden;
+    width: 45vw;
+    height: 10vh;
+    font-size: 1em;
+  }
+
 }
