@@ -33,6 +33,7 @@ function clearAll(){
     upperTextInput.value = '';
     lowerTextInput.value = '';
     textSizeDrug.value = 15;
+    document.getElementById('value-text-size').innerText = textSizeDrug.value;
     textColorInput.value = '#ffffff';
     textStrokeCheck.checked = true;
 }
