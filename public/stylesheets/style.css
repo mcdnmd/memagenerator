@@ -198,7 +198,7 @@ button{
     align-items: center;
     max-width: 95vw;
     max-height: 85vh;
-    margin: 1vh 5vw;
+    margin: 4vh 5vw;
     border-radius: 2vh;
     background: #bcbcbc;
   }
@@ -220,8 +220,7 @@ button{
   .option {
     display: flex;
     align-items: center;
-    min-width: 10vw;
-    min-height: 8vh;
+    max-width: 90vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
     margin-right: 0.5vh;
@@ -245,13 +244,20 @@ button{
 
   .file-input + label {
     display: flex;
-    min-width: 90vw;
-    min-height: 10vh;
+    width: 90vw;
+    height: 10vh;
+  }
+
+  .text-options-extended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw;
   }
 
   .text-value input {
-    width: 85vw;
-    height: 5vh;
+    width: 90vw;
+    height: 10vh;
     border: none;
     border-bottom: 1px solid #999;
     margin: 1vh 2vw;
@@ -259,12 +265,6 @@ button{
     outline: none;
     font-size: 1em;
   }
-
-  .text-options-extended {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
 
   .text-options {
     display: flex;
