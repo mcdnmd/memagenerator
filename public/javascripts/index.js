@@ -22,9 +22,9 @@ let textStrokeCheck = document.getElementById('text-stroke');
 let downloadButton = document.getElementById('download-button');
 let resetButton = document.getElementById('reset-button');
 
-function clearAll(){
+function clearAll(reset=false){
     sizeText = 15;
-    if (image.src !== '')
+    if (image.src !== '' && reset)
         sizeText = 15 / 100 * canvas.width
     textUp = '';
     textLow = ''
@@ -98,7 +98,7 @@ downloadButton.addEventListener('click', (e) => {
 }, false);
 
 resetButton.addEventListener('click', (e) => {
-    clearAll();
+    clearAll(true);
     draw();
 }, false);
 
