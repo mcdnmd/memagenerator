@@ -131,9 +131,9 @@ function draw(fake=false, can=canvas){
     context.fillStyle = textColor;
     if (strokeStyle){
         context.strokeStyle = 'black';
-        context.strokeText(textUp, can.width / 2, textSizeTop / 100 * can.width + 15);
+        context.strokeText(textUp, can.width / 2, textSizeTop / 100 * can.height + 15);
         context.strokeText(textLow, can.width / 2, can.height - textSizeBottom - 15);
     }
-    context.fillText(textUp, can.width / 2, textSizeTop / 100 * can.width + 15);
+    context.fillText(textUp, can.width / 2, textSizeTop / 100 * can.height + 15);
     context.fillText(textLow, can.width / 2, can.height - textSizeBottom - 15);
 }
