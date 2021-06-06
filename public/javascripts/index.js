@@ -83,15 +83,17 @@ window.addEventListener('resize', (e) => {
 }, false);
 
 downloadButton.addEventListener('click', (e) => {
-    let link = document.createElement('a');
-    link.download = '5051memorial.png';
-    let can = document.createElement('canvas');
-    let fakeCtx = can.getContext('2d');
-    can.width = image.naturalWidth;
-    can.height = image.naturalHeight;
-    draw(true, can);
-    link.href = can.toDataURL("image/png")
-    link.click();
+    if (image.src !== '') {
+        let link = document.createElement('a');
+        link.download = '5051memorial.png';
+        let can = document.createElement('canvas');
+        let fakeCtx = can.getContext('2d');
+        can.width = image.naturalWidth;
+        can.height = image.naturalHeight;
+        draw(true, can);
+        link.href = can.toDataURL("image/png")
+        link.click();
+    }
 }, false);
 
 resetButton.addEventListener('click', (e) => {

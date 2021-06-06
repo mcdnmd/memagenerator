@@ -67,8 +67,8 @@ canvas {
 }
 
 .file-input {
-  width: 1px;
-  height: 1px;
+  width: 2px;
+  height: 2px;
   opacity: 0;
   overflow: hidden;
   z-index: -1;
@@ -302,5 +302,4 @@ button{
     height: 10vh;
     font-size: 1em;
   }
-
 }
