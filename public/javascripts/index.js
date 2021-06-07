@@ -134,7 +134,7 @@ function draw(fake=false, can=canvas){
         context.strokeText(textLow, can.width / 2, can.height - textSizeBottom - 15);
     }
     context.fillText(textLow, can.width / 2, can.height - textSizeBottom - 15);
-    drawWords(ctx,
+    drawWords(context,
         textUp,
         can.width / 2,
         textSizeTop / 100 * can.height + 15,
@@ -152,21 +152,18 @@ function drawWords(context, text, x, y, maxWidth, maxHeight, lineHeight, rectHei
         let metrics = context.measureText(testLine);
         let testWidth = metrics.width;
         if (testWidth > maxWidth && n > 0) {
-            if (strokeStyle){
-                context.strokeStyle = 'black';
-                context.strokeText(line, x, y);
-            }
-            context.fillText(line, x, y);
+            fillText(context, line, x, y);
             line = words[n] + ' ';
-            if (y + lineHeight >= maxHeight)
-                y -= lineHeight;
-            else
-                y += lineHeight;
+            y += lineHeight;
         }
         else {
             line = testLine;
         }
     }
+    fillText(context, line, x, y);
+}
+
+function fillText(context, line, x, y) {
     if (strokeStyle){
         context.strokeStyle = 'black';
         context.strokeText(line, x, y);
