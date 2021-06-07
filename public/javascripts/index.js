@@ -131,9 +131,45 @@ function draw(fake=false, can=canvas){
     context.fillStyle = textColor;
     if (strokeStyle){
         context.strokeStyle = 'black';
-        context.strokeText(textUp, can.width / 2, textSizeTop / 100 * can.height + 15);
         context.strokeText(textLow, can.width / 2, can.height - textSizeBottom - 15);
     }
-    context.fillText(textUp, can.width / 2, textSizeTop / 100 * can.height + 15);
     context.fillText(textLow, can.width / 2, can.height - textSizeBottom - 15);
+    drawWords(ctx,
+        textUp,
+        can.width / 2,
+        textSizeTop / 100 * can.height + 15,
+        canvas.width,
+        canvas.height,
+        textSize,
+        textSize,
+        textUp.split(' '));
+}
+
+function drawWords(context, text, x, y, maxWidth, maxHeight, lineHeight, rectHeight, words) {
+    let line = '';
+    for(let n = 0; n < words.length; n++) {
+        let testLine = line + words[n] + ' ';
+        let metrics = context.measureText(testLine);
+        let testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+            if (strokeStyle){
+                context.strokeStyle = 'black';
+                context.strokeText(line, x, y);
+            }
+            context.fillText(line, x, y);
+            line = words[n] + ' ';
+            if (y + lineHeight >= maxHeight)
+                y -= lineHeight;
+            else
+                y += lineHeight;
+        }
+        else {
+            line = testLine;
+        }
+    }
+    if (strokeStyle){
+        context.strokeStyle = 'black';
+        context.strokeText(line, x, y);
+    }
+    context.fillText(line, x, y);
 }
